@@ -119,8 +119,8 @@ class SpeakerDiarization(SpeakerDiarizationMixin, Pipeline):
         embedding: PipelineModel = "speechbrain/spkrec-ecapa-voxceleb@5c0be3875fda05e81f3c004ed8c7c06be308de1e",
         embedding_exclude_overlap: bool = False,
         clustering: str = "AgglomerativeClustering",
-        embedding_batch_size: int = 16,
-        segmentation_batch_size: int = 16,
+        embedding_batch_size: int = 32,
+        segmentation_batch_size: int = 32,
         der_variant: Optional[dict] = None,
         use_auth_token: Union[Text, None] = None,
     ):
