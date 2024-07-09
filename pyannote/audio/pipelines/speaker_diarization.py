@@ -128,7 +128,7 @@ class SpeakerDiarization(SpeakerDiarizationMixin, Pipeline):
 
         self.segmentation_model = segmentation
         model: Model = get_model(segmentation, use_auth_token=use_auth_token)
-        model = torch.compile(model)
+        #model = torch.compile(model)
         self.segmentation_step = segmentation_step
 
         self.embedding = embedding
