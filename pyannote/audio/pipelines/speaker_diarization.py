@@ -166,7 +166,7 @@ class SpeakerDiarization(SpeakerDiarizationMixin, Pipeline):
             self._embedding = PretrainedSpeakerEmbedding(
                 self.embedding, use_auth_token=use_auth_token
             )
-            self._embedding = torch.compile(self._embedding)
+            #self._embedding = torch.compile(self._embedding)
             self._audio = Audio(sample_rate=self._embedding.sample_rate, mono="downmix")
             metric = self._embedding.metric
 
