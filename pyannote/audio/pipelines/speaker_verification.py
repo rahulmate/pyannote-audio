@@ -742,9 +742,9 @@ def PretrainedSpeakerEmbedding(
     """
 
     if isinstance(embedding, str) and "pyannote" in embedding:
-        return PyannoteAudioPretrainedSpeakerEmbedding(
+        return torch.compile(PyannoteAudioPretrainedSpeakerEmbedding(
             embedding, device=device, use_auth_token=use_auth_token
-        )
+        ))
 
     elif isinstance(embedding, str) and "speechbrain" in embedding:
         return SpeechBrainPretrainedSpeakerEmbedding(
