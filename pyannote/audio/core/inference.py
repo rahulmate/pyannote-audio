@@ -112,6 +112,7 @@ class Inference(BaseInference):
 
         self.model.eval()
         self.model.to(self.device)
+        self.model =torch.compile(self.model)
 
         specifications = self.model.specifications
 
